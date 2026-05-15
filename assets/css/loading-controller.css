@@ -1,0 +1,192 @@
+:root {
+  --primary-cobalt-background: #d3d3d3;
+  --brand-white-tint: #066303bd;
+  --icon-dimension-standard: 85px;
+  --arc-circumference-size: 140px;
+  --arc-stroke-thickness: 3px;
+  --rotation-animation-duration: 1.5s;
+  --loading-fade-duration: 0.6s;
+}
+
+/* ================================
+   Loading Screen Wrapper
+   ================================ */
+.primary-viewport-container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-cobalt-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: opacity var(--loading-fade-duration) ease-in-out,
+    visibility var(--loading-fade-duration) ease-in-out;
+}
+
+/* حالة إخفاء شاشة التحميل */
+.primary-viewport-container.hidden-loading-state {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ================================
+   Central Brand Wrapper
+   ================================ */
+.central-brand-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--arc-circumference-size);
+  height: var(--arc-circumference-size);
+}
+
+/* ================================
+   Icon Placeholder Holder
+   ================================ */
+.icon-placeholder-holder {
+  position: relative;
+  width: var(--icon-dimension-standard);
+  height: var(--icon-dimension-standard);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.brand-symbol-structure {
+  width: 50%;
+  height: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.brand-symbol-structure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+/* ================================
+   Rotating Arc Element
+   ================================ */
+.rotating-arc-element {
+  position: absolute;
+  top: 21px;
+  left: 15px;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: perpetual-rotation var(--rotation-animation-duration) linear
+    infinite;
+  z-index: 1;
+}
+
+.arc-segment-visual {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  border: var(--arc-stroke-thickness) solid transparent;
+  border-top-color: var(--brand-white-tint);
+  border-right-color: var(--brand-white-tint);
+  clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 50%, 50% 50%);
+}
+
+/* ================================
+   Main Website Content
+   ================================ */
+.main-website-content {
+  width: 100%;
+  min-height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--loading-fade-duration) ease-in-out,
+    visibility var(--loading-fade-duration) ease-in-out;
+}
+
+/* حالة إظهار المحتوى الرئيسي */
+.main-website-content.visible-content-state {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ================================
+   Animations
+   ================================ */
+@keyframes perpetual-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* أنيميشن اختياري لظهور المحتوى */
+@keyframes content-slide-up-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-website-content.visible-content-state {
+  animation: content-slide-up-reveal 0.8s ease-out;
+}
+
+/* ================================
+   Responsive Media Queries (min-width only)
+   ================================ */
+
+/* Small devices and up */
+@media (min-width: 576px) {
+  :root {
+    --icon-dimension-standard: 90px;
+    --arc-circumference-size: 145px;
+  }
+}
+
+/* Medium devices and up */
+@media (min-width: 768px) {
+  :root {
+    --icon-dimension-standard: 95px;
+    --arc-circumference-size: 150px;
+  }
+}
+
+/* Large devices and up */
+@media (min-width: 992px) {
+  :root {
+    --icon-dimension-standard: 100px;
+    --arc-circumference-size: 155px;
+  }
+}
+
+/* Extra large devices and up */
+@media (min-width: 1200px) {
+  :root {
+    --icon-dimension-standard: 105px;
+    --arc-circumference-size: 160px;
+  }
+}
+
+/* Extra extra large devices and up */
+@media (min-width: 1400px) {
+  :root {
+    --icon-dimension-standard: 110px;
+    --arc-circumference-size: 165px;
+  }
+}
