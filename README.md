@@ -1,6 +1,11 @@
 # BAC — Bawabat Alwajihat Company Website
 
+⚠️ This template was originally created by Mohammed Sabry
+credit is required: github.com/Mohammedsabry13
+______________________________________
+
 A responsive corporate website for **BAWABAT ALWAJIHAT COMPANY (BAC)**, a premium provider of aluminum windows, doors, and façade solutions based in Al Kharj, Saudi Arabia.
+
 
 ## 🛠️ Tech Stack
 - **HTML5 & CSS3** — semantic markup and custom styling

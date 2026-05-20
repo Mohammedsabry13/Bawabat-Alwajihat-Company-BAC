@@ -1,4 +1,12 @@
 /**
+ * ALFA HUBS - CUSTOM JAVASCRIPT
+ * @author Mohammed Sabry (Mohammedsabry13)
+ * @github https://github.com/Mohammedsabry13
+ * @copyright 2026 Mohammed Sabry. All rights reserved.
+ * Pure JavaScript with Bootstrap 5
+ */
+
+/**
  * Hetch - Custom Script
  * Handles Lucide icons, Sticky Nav, and Marquee effects
  */
